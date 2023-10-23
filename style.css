@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    scroll-behavior: smooth;
+}   
 
 html {
   scroll-behavior: smooth;
@@ -14,8 +15,13 @@ html {
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
+    position: fixed;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .container{
     position: relative;
     height: 100%;
@@ -60,12 +66,14 @@ section{
 .secHeading{
     font-size: 5rem;
     padding: 0 10rem;
+    animation:gradient-animation 18s ease infinite;
+    /* background-blend-mode: color(blue,red,green); */
 }
 
 .text{
     font-size: 1.5rem;
     padding: 0 10rem;
-    margin: 5rem 0;
+    margin: 5rem 0rem;
 }
 
 .bg{
@@ -75,6 +83,7 @@ section{
     background-position: center;
     background-size: cover;
     height: 500px;
+    
 }
 
 .bg1{
@@ -99,8 +108,43 @@ section{
     color: black;
     font-size: 3.5rem;
     font-weight: 600px;
+    background: linear-gradient(300deg,blue,black,white);
 }
 
+nav{
+    display: flex;
+    height: 5rem;
+    justify-content: space-around;
+     background-color:rgb(45, 45, 45);
+    color: white; 
+    filter: blur(5);
+    padding: 2rem;
+    position: sticky;
+}
+a:hover{
+    color: aqua;
+}
+
+footer{
+    height: 15rem;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 100rem;
+}
+
+
+#lower_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem;
+    gap: 1rem;
+    justify-content: center;
+    border-left: 3px solid black;
+}
+
+#contact-button{
+    background: #1c00b5;
 
 /* Today we will make it responsive  */
 
@@ -394,5 +438,19 @@ section{
         color: black;
         font-size: 1rem;
         font-weight: 600px;
+    }
+}
+
+@keyframes gradient-animation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%
+    {
+        background-position:100% 50%;
+    }
+    100%
+    {
+        background-position:0% 50%;
     }
 }
